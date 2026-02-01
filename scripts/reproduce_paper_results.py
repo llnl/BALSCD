@@ -9,7 +9,7 @@ comparisons, Hugoniot curves, prediction intervals, and summary statistics.
 
 Usage
 -----
-./scripts/create_paper_plots.py
+./scripts/reproduce_paper_results.py
 """
 
 import os
