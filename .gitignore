@@ -1,0 +1,16 @@
+# Python
+*.pyc
+*.egg-info
+__pycache__/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDEs and Editors
+.vscode/
+.DS_Store
+
+# Project-specific directories
+images/
+summary_statistics/

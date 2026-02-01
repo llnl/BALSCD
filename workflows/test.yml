@@ -1,0 +1,18 @@
+name: Test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ['3.10', '3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -e .
+      - run: python scripts/reproduce_paper_results.py
+      - run: python scripts/run_analysis.py -d pyrolusite_marsh serpentine_marsh toluene_marsh
+      - run: python scripts/run_analysis.py -d pyrolusite_marsh serpentine_marsh toluene_marsh --beta0 2.1 1.5 --std_devs0 0.1 0.05 --rho0 0.3 --a0 2.0 --b0 0.5
