@@ -50,7 +50,7 @@ Optional: Install development dependencies (pytest and ruff)
     pip install -e ".[dev]"
 ```
 
-5. **Create paper plots**
+5. **Create paper plots and summary statistics for tables**
 ```bash
     python3 scripts/reproduce_paper_results.py
 ```
