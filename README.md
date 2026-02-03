@@ -26,8 +26,8 @@ Windows users should use `python` instead of `python3` and `.venv\Scripts\activa
 
 1. **Clone the repository**
 ```bash
-    git clone <your-repo-url>
-    cd <your-repo-directory>
+    git clone https://github.com/llnl/balscd.git
+    cd balscd
 ```
 
 2. **Create a virtual environment**
