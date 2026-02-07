@@ -33,4 +33,4 @@ dev = [
 Repository = "https://github.com/llnl/BALSCD"
 
 [tool.setuptools]
-packages = ["BALSCD"]
+packages = ["balscd"]
