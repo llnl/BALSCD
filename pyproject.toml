@@ -3,7 +3,7 @@ requires = ["setuptools>=45", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "balscd"
+name = "BALSCD"
 version = "0.1.0"
 description = "Bayesian analysis of linear shock compression data"
 readme = "README.md"
@@ -30,7 +30,7 @@ dev = [
 ]
 
 [project.urls]
-Repository = "https://github.com/llnl/balscd"
+Repository = "https://github.com/llnl/BALSCD"
 
 [tool.setuptools]
-packages = ["balscd"]
+packages = ["BALSCD"]

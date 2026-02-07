@@ -4,7 +4,7 @@ This repository contains the code and data for creating the plots and tables in 
 
 Features:
 
-- The balscd package (Bayesian Analysis of Linear Shock Compression Data), which implements Bayesian linear regression and bootstrapping methods for analyzing shock wave-particle velocity Hugoniot data
+- The BALSCD package (Bayesian Analysis of Linear Shock Compression Data), which implements Bayesian linear regression and bootstrapping methods for analyzing shock wave-particle velocity Hugoniot data
 
 - Datasets for argon, copper, and nickel used in the paper, plus additional datasets for pyrolusite, serpentine, and toluene to demonstrate the package's use on new materials
 
@@ -26,8 +26,8 @@ Windows users should use `python` instead of `python3` and `.venv\Scripts\activa
 
 1. **Clone the repository**
 ```bash
-    git clone https://github.com/llnl/balscd.git
-    cd balscd
+    git clone https://github.com/llnl/BALSCD.git
+    cd BALSCD
 ```
 
 2. **Create a virtual environment**
