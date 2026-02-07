@@ -13,6 +13,7 @@ authors = [
     {name = "Jason Bernstein", email = "bernstein8@llnl.gov"},
     {name = "Philip Myint", email = "myint1@llnl.gov"},
 ]
+keywords = ["shock compression", "bayesian analysis", "shock physics", "materials science"]
 dependencies = [
     "matplotlib>=3.9.0",
     "numpy>=2.0.0",
