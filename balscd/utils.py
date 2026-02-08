@@ -14,6 +14,8 @@ import pandas as pd
 from matplotlib.axes import Axes
 from matplotlib.figure import Figure
 
+from balscd.plot_config import font_sizes
+
 
 def load_data(dataset: str) -> pd.DataFrame:
     """
@@ -143,7 +145,7 @@ def setup_figure(
         Matplotlib axes object with tick size 13
     """
     fig, ax = plt.subplots(figsize=figsize)
-    ax.tick_params(axis="both", labelsize=13)
+    ax.tick_params(axis="both", labelsize=font_sizes["tick"])
     ax.grid(grid)
     return fig, ax
 
