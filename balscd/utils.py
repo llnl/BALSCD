@@ -118,8 +118,10 @@ def save_and_close_figure(
     dataset : str
         Dataset name (used as subdirectory)
     """
+    output_dir = Path("images") / dataset
+    output_dir.mkdir(parents=True, exist_ok=True)
     plt.tight_layout()
-    plt.savefig(Path("images") / dataset / f"{filename}.png")
+    plt.savefig(output_dir / f"{filename}.png")
     plt.close()
 
 

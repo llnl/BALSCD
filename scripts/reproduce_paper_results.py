@@ -12,8 +12,6 @@ Usage
 ./scripts/reproduce_paper_results.py
 """
 
-from pathlib import Path
-
 from balscd import convergence, regression, utils
 
 least_squares_plot_limits = {
@@ -64,10 +62,6 @@ def plot_all(dataset: str) -> None:
         Dataset name (e.g., 'argon_marsh', 'copper_marsh', 'nickel_marsh')
     """
     df = utils.load_data(dataset)
-
-    # Where to save images
-    image_dir = Path("images") / dataset
-    image_dir.mkdir(parents=True, exist_ok=True)
 
     # Determine if legends should be shown (only for nickel_marsh)
     show_legend = dataset == "nickel_marsh"
@@ -120,7 +114,7 @@ def plot_all(dataset: str) -> None:
     config = informative_prior_configs[dataset]
     posterior.plot_posterior_beta_informative(**config, show_legend=show_legend)
 
-    print(f"Plots saved to {image_dir} directory")
+    print(f"Plots saved to images/{dataset} directory")
 
     # Table 1: Posterior distribution summary statistics
     posterior.save_summary_statistics()

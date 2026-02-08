@@ -113,9 +113,6 @@ def plot_all(
     """
     df = utils.load_data(dataset)
 
-    # Where to save images
-    (Path("images") / dataset).mkdir(parents=True, exist_ok=True)
-
     # Instantiate posterior and bootstrap distribution objects
     posterior = regression.PosteriorDistribution(df, dataset)
     bootstrap = regression.BootstrapDistribution(df, dataset)
