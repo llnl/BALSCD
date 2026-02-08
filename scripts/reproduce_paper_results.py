@@ -66,7 +66,8 @@ def plot_all(dataset: str) -> None:
     df = utils.load_data(dataset)
 
     # Where to save images
-    (Path("images") / dataset).mkdir(parents=True, exist_ok=True)
+    image_dir = Path("images") / dataset
+    image_dir.mkdir(parents=True, exist_ok=True)
 
     # Determine if legends should be shown (only for nickel_marsh)
     show_legend = dataset == "nickel_marsh"
@@ -119,7 +120,7 @@ def plot_all(dataset: str) -> None:
     config = informative_prior_configs[dataset]
     posterior.plot_posterior_beta_informative(**config, show_legend=show_legend)
 
-    print(f"Plots saved to {Path('images') / dataset} directory")
+    print(f"Plots saved to {image_dir} directory")
 
     # Table 1: Posterior distribution summary statistics
     posterior.save_summary_statistics()
