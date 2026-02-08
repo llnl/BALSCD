@@ -22,7 +22,7 @@ Usage
 """
 
 import argparse
-import os
+from pathlib import Path
 
 from balscd import regression, utils
 
@@ -114,7 +114,7 @@ def plot_all(
     df = utils.load_data(dataset)
 
     # Where to save images
-    os.makedirs(os.path.join("images", dataset), exist_ok=True)
+    (Path("images") / dataset).mkdir(parents=True, exist_ok=True)
 
     # Instantiate posterior and bootstrap distribution objects
     posterior = regression.PosteriorDistribution(df, dataset)
@@ -163,7 +163,7 @@ def plot_all(
     # prediction interval for new measurement
     bootstrap.plot_confidence_and_prediction_interval_for_Us()
 
-    print(f"Plots saved to {os.path.join('images', f'{dataset}')} directory")
+    print(f"Plots saved to {Path('images') / dataset} directory")
 
     # Posterior distribution summary statistics
     posterior.save_summary_statistics()

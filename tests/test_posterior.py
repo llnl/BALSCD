@@ -5,7 +5,7 @@ Verifies that credible intervals computed from the t-distribution have correct
 coverage probabilities for various significance levels and parameters.
 """
 
-import os
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -18,7 +18,7 @@ from balscd import regression
 @pytest.fixture
 def posterior():
     """Create a PosteriorDistribution instance for testing."""
-    df = pd.read_csv(os.path.join("data", "argon_marsh.csv"))
+    df = pd.read_csv(Path("data") / "argon_marsh.csv")
     return regression.PosteriorDistribution(df, "argon")
 
 

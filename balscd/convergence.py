@@ -5,7 +5,7 @@ Generates a figure showing how the t-distribution converges to a normal
 distribution as degrees of freedom increase.
 """
 
-import os
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -56,5 +56,5 @@ def plot_t_distribution_convergence() -> None:
     ax.set_ylabel("Probability Density Function", fontsize=font_sizes["label"])
     ax.legend(fontsize=font_sizes["legend"])
     fig.tight_layout()
-    fig.savefig(os.path.join("images", "t_distribution_convergence.png"))
+    fig.savefig(Path("images") / "t_distribution_convergence.png")
     plt.close()

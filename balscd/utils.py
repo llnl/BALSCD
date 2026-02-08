@@ -6,7 +6,7 @@ This module provides helper functions for loading and validating experimental da
 configuring matplotlib figures, and performing statistical computations.
 """
 
-import os
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -42,9 +42,9 @@ def load_data(dataset: str) -> pd.DataFrame:
     if not dataset:
         raise ValueError("Dataset name cannot be empty")
 
-    filepath = os.path.join("data", f"{dataset}.csv")
+    filepath = Path("data") / f"{dataset}.csv"
 
-    if not os.path.exists(filepath):
+    if not filepath.exists():
         raise FileNotFoundError(
             f"Dataset file not found: {filepath}\n"
             f"Please ensure the file exists in the 'data' directory."
@@ -117,7 +117,7 @@ def save_and_close_figure(
         Dataset name (used as subdirectory)
     """
     plt.tight_layout()
-    plt.savefig(os.path.join("images", dataset, f"{filename}.png"))
+    plt.savefig(Path("images") / dataset / f"{filename}.png")
     plt.close()
 
 

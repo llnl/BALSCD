@@ -7,8 +7,8 @@ experiments. It includes tools for computing posterior distributions, bootstrap
 resampling, and visualizing Hugoniot curves in the pressure-volume plane.
 """
 
-import os
 from abc import ABC, abstractmethod
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -526,8 +526,8 @@ class RegressionBase(ABC):
             Subdirectory name for organizing output files
         """
         # Specify where to save results
-        output_dir = os.path.join("summary_statistics", subdirectory)
-        os.makedirs(output_dir, exist_ok=True)
+        output_dir = Path("summary_statistics") / subdirectory
+        output_dir.mkdir(parents=True, exist_ok=True)
 
         # Determine the mean column header based on interval type
         mean_header = (
@@ -548,7 +548,7 @@ class RegressionBase(ABC):
         output_text = "\n".join(lines) + "\n"
 
         # Write to file
-        output_path = os.path.join(output_dir, f"{self.dataset}.txt")
+        output_path = output_dir / f"{self.dataset}.txt"
         with open(output_path, "w") as f:
             f.write(output_text)
 
