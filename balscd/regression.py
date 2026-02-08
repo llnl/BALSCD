@@ -49,10 +49,10 @@ class RegressionBase(ABC):
         self.S_hat = self.beta_hat[1]
         self.y_pred = self.C0_hat + self.S_hat * self.x
         self.residuals = self.y - self.y_pred
-        self.s_squared = np.sum(self.residuals**2) / self.nu
+        sum_sq_res = np.sum(self.residuals**2)
+        self.s_squared = sum_sq_res / self.nu
 
         # Compute r-squared
-        sum_sq_res = np.sum((self.y - self.y_pred) ** 2)
         sum_sq_tot = np.sum((self.y - self.y.mean()) ** 2)
         self.r_squared = 1 - sum_sq_res / sum_sq_tot
 
