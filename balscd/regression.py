@@ -18,7 +18,7 @@ from matplotlib.patches import Ellipse
 from scipy.stats import f, invgamma, multivariate_normal, multivariate_t, t
 
 from balscd import utils
-from balscd.plot_config import font_sizes as font_sizes
+from balscd.plot_config import font_sizes
 
 
 class RegressionBase(ABC):

@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import multivariate_t, norm
 
-from balscd.plot_config import font_sizes as font_sizes
+from balscd.plot_config import font_sizes
 from balscd.utils import setup_figure
 
 
