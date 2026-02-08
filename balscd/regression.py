@@ -918,13 +918,13 @@ class PosteriorDistribution(RegressionBase):
         seed : int, optional
             Random seed for reproducibility
         """
-        np.random.seed(seed)
+        rng = np.random.default_rng(seed)
 
         # Sample sigma^2 ~ IG(nu / 2, nu * s^2 / 2)
         sigma_sq = invgamma.rvs(
             a=self.nu / 2,
             scale=self.nu * self.s_squared / 2,
-            random_state=seed,
+            random_state=rng,
         )
 
         # Sample beta from N(beta_hat, sigma^2 * (X'X)^{-1})
@@ -932,11 +932,11 @@ class PosteriorDistribution(RegressionBase):
         pred_beta_hat = multivariate_normal.rvs(
             mean=self.beta_hat,
             cov=cov_beta,
-            random_state=seed,
+            random_state=rng,
         )
 
         # Simulate new y values at x values
-        error = np.random.normal(0, scale=np.sqrt(sigma_sq), size=self.x.shape)
+        error = rng.normal(0, scale=np.sqrt(sigma_sq), size=self.x.shape)
         y_new = pred_beta_hat[0] + pred_beta_hat[1] * self.x + error
 
         # Compute min and max of actual and simulated y measurements
@@ -1198,8 +1198,8 @@ class BootstrapDistribution(RegressionBase):
         np.ndarray
             Bootstrap parameter samples, shape (n_sample, 2)
         """
-        np.random.seed(seed)
-        indices = np.random.randint(
+        rng = np.random.default_rng(seed)
+        indices = rng.integers(
             low=0,
             high=self.n,
             size=(n_sample, self.n),
@@ -1253,8 +1253,8 @@ class BootstrapDistribution(RegressionBase):
         cred_upper = np.percentile(y_pred_samples, upper_percentile, axis=1)
 
         # Prediction interval for new Us measurement
-        np.random.seed(seed + 1)
-        error = np.random.normal(scale=np.sqrt(self.s_squared), size=(n_pred, n_sample))
+        rng = np.random.default_rng(seed)
+        error = rng.normal(scale=np.sqrt(self.s_squared), size=(n_pred, n_sample))
         pred_samples = y_pred_samples + error
         pred_lower = np.percentile(pred_samples, lower_percentile, axis=1)
         pred_upper = np.percentile(pred_samples, upper_percentile, axis=1)
