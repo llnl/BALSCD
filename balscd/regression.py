@@ -552,8 +552,6 @@ class RegressionBase(ABC):
         with open(output_path, "w") as f:
             f.write(output_text)
 
-        print(f"Table saved to {output_path}")
-
 
 class PosteriorDistribution(RegressionBase):
     """Posterior distribution for Bayesian linear regression with non-informative prior."""

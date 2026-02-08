@@ -22,7 +22,6 @@ Usage
 """
 
 import argparse
-from pathlib import Path
 
 from balscd import regression, utils
 
@@ -159,8 +158,6 @@ def plot_all(
     # Create bootstrap confidence interval for mean shock wave velocity and
     # prediction interval for new measurement
     bootstrap.plot_confidence_and_prediction_interval_for_Us()
-
-    print(f"Plots saved to {Path('images') / dataset} directory")
 
     # Posterior distribution summary statistics
     posterior.save_summary_statistics()

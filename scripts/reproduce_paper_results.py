@@ -114,8 +114,6 @@ def plot_all(dataset: str) -> None:
     config = informative_prior_configs[dataset]
     posterior.plot_posterior_beta_informative(**config, show_legend=show_legend)
 
-    print(f"Plots saved to images/{dataset} directory")
-
     # Table 1: Posterior distribution summary statistics
     posterior.save_summary_statistics()
 
