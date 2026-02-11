@@ -128,7 +128,7 @@ class RegressionBase(ABC):
         ylim : tuple[float, float], optional
             y-axis limits (Us range). If None, computed from data.
         """
-        fig, ax = utils.setup_figure()
+        _, ax = utils.setup_figure()
         ax.scatter(
             self.x,
             self.y,
@@ -186,7 +186,7 @@ class RegressionBase(ABC):
         ylim : tuple[float, float], optional
             y-axis limits. If None, computed from data.
         """
-        fig, ax = utils.setup_figure()
+        _, ax = utils.setup_figure()
         ax.scatter(
             self.x,
             self.residuals,
@@ -365,7 +365,7 @@ class RegressionBase(ABC):
         interval_type = "Confidence" if class_suffix == "bootstrap" else "Credible"
 
         # Plot
-        fig, ax = utils.setup_figure()
+        _, ax = utils.setup_figure()
 
         # Add credible or confidence interval
         ax.fill_between(
@@ -450,7 +450,7 @@ class RegressionBase(ABC):
         alpha : float, optional
             Significance level
         """
-        fig, ax = utils.setup_figure()
+        _, ax = utils.setup_figure()
 
         # Add prediction interval for new Us measurement
         ax.fill_between(
@@ -770,7 +770,7 @@ class PosteriorDistribution(RegressionBase):
         )
 
         # Make plot
-        fig, ax = utils.setup_figure()
+        _, ax = utils.setup_figure()
         ax.hist(
             C0_mc,
             color="black",
@@ -824,7 +824,7 @@ class PosteriorDistribution(RegressionBase):
         beta1_mesh, beta2_mesh, pdf = self.evaluate_t_pdf_on_grid()
 
         # Plot the density function with the least squares estimate of beta
-        fig, ax = utils.setup_figure(grid=False)
+        _, ax = utils.setup_figure(grid=False)
         contour = ax.contourf(beta1_mesh, beta2_mesh, pdf, levels=50, cmap="viridis")
         cb = plt.colorbar(contour, ax=ax)
         cb.ax.tick_params(labelsize=13)
@@ -942,7 +942,7 @@ class PosteriorDistribution(RegressionBase):
         min_y = all_y.min()
         max_y = all_y.max()
 
-        fig, ax = utils.setup_figure()
+        _, ax = utils.setup_figure()
         ax.scatter(
             self.y,
             y_new,
@@ -994,7 +994,7 @@ class PosteriorDistribution(RegressionBase):
         pdf = invgamma.pdf(x_grid, a=shape, scale=scale)
 
         # Make plot
-        fig, ax = utils.setup_figure()
+        _, ax = utils.setup_figure()
         ax.plot(x_grid, pdf)
         ax.text(
             x=max(x_grid),
@@ -1100,7 +1100,7 @@ class PosteriorDistribution(RegressionBase):
         Sigma_posterior = b_tilde / a_tilde * np.linalg.inv(G)
 
         # Plot the PDF
-        fig, ax = utils.setup_figure()
+        _, ax = utils.setup_figure()
 
         # Plot prior mean, posterior mean, and least squares estimate
         ax.scatter(
@@ -1404,7 +1404,7 @@ class RegressionComparison:
             ).pdf(x=beta_grid)
 
             # Plot bootstrap samples with posterior t distribution
-            fig, ax = utils.setup_figure()
+            _, ax = utils.setup_figure()
             ax.hist(
                 betas_bootstrap[:, i],
                 color="black",
@@ -1470,7 +1470,7 @@ class RegressionComparison:
         betas2 = bootstrap2.sample_beta(n_sample)
 
         # Plot bootstrap samples
-        fig, ax = utils.setup_figure()
+        _, ax = utils.setup_figure()
         ax.hist(
             betas1[:, 1],
             color="black",
@@ -1558,7 +1558,7 @@ class RegressionComparison:
         ).pdf(x=beta_grid)
 
         # Plot
-        fig, ax = utils.setup_figure()
+        _, ax = utils.setup_figure()
         ax.plot(
             beta_grid,
             t_pdf1,
