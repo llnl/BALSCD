@@ -12,7 +12,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from matplotlib.axes import Axes
-from matplotlib.figure import Figure
 
 from balscd.plot_config import font_sizes
 
@@ -128,7 +127,7 @@ def save_and_close_figure(
 def setup_figure(
     figsize: tuple[int, int] = (5, 5),
     grid: bool = True,
-) -> tuple[Figure, Axes]:
+) -> Axes:
     """
     Create matplotlib figure with standard formatting.
 
@@ -141,15 +140,13 @@ def setup_figure(
 
     Returns
     -------
-    fig : Figure
-        Matplotlib figure object
     ax : Axes
         Matplotlib axes object with tick size 13
     """
-    fig, ax = plt.subplots(figsize=figsize)
+    _, ax = plt.subplots(figsize=figsize)
     ax.tick_params(axis="both", labelsize=font_sizes["tick"])
     ax.grid(grid)
-    return fig, ax
+    return ax
 
 
 def sample_multivariate_t(

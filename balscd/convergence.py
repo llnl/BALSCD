@@ -30,7 +30,7 @@ def plot_t_distribution_convergence() -> None:
     x_grid = np.linspace(-7, 7, 500)
 
     # Plotting
-    fig, ax = setup_figure(figsize=(8, 5))
+    ax = setup_figure(figsize=(8, 5))
 
     # Normal distribution
     normal_pdf = norm.pdf(x_grid, loc=mu, scale=np.sqrt(Sigma))
@@ -55,6 +55,6 @@ def plot_t_distribution_convergence() -> None:
     ax.set_xlabel("x", fontsize=font_sizes["label"])
     ax.set_ylabel("Probability Density Function", fontsize=font_sizes["label"])
     ax.legend(fontsize=font_sizes["legend"])
-    fig.tight_layout()
-    fig.savefig(Path("images") / "t_distribution_convergence.png")
+    plt.tight_layout()
+    plt.savefig(Path("images") / "t_distribution_convergence.png")
     plt.close()
