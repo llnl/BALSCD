@@ -72,7 +72,7 @@ You can also contact Jason Bernstein at bernstein8@llnl.gov.
 This software is distributed under the terms of the MIT license.
 All new contributions must be made under the MIT license.
 
-See LICENSE and NOTICE for details.
+See [LICENSE](LICENSE) and [NOTICE](NOTICE) for details.
 
 ## Release
 
