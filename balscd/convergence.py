@@ -20,7 +20,8 @@ def plot_t_distribution_convergence() -> None:
     Plot t-distributions converging to normal as degrees of freedom increase.
 
     Creates figure showing t-distributions with nu = 2, 5, 10, 15, 20 alongside
-    a standard normal distribution to illustrate asymptotic convergence.
+    a normal distribution with mean 0 and variance 1.5 to illustrate asymptotic
+    convergence.
     Saves to images/t_distribution_convergence.png.
     """
     # Parameters
