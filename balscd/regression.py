@@ -351,7 +351,7 @@ class RegressionBase(ABC):
             V_sorted = V[sort_idx]
             P_sorted = P[sort_idx]
 
-            # np.interp extrapolates to np.nan outside the data range
+            # np.interp uses endpoint values outside the data range by default
             interpolated_pressures[idx] = np.interp(V_grid, V_sorted, P_sorted)
 
         # Compute percentiles
