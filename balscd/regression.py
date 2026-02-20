@@ -759,7 +759,7 @@ class PosteriorDistribution(RegressionBase):
         # Get Monte Carlo samples of betas
         rv = multivariate_t(loc=self.beta_hat, shape=self.Sigma, df=self.nu)
         betas_mc = rv.rvs(size=n_sample, random_state=seed)
-        C0_mc = [beta[0] for beta in betas_mc]
+        C0_mc = betas_mc[:, 0]
 
         # Compute bin edges based on data range and desired bin width
         bin_width = x_grid[10] - x_grid[0]
