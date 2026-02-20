@@ -549,8 +549,7 @@ class RegressionBase(ABC):
 
         # Write to file
         output_path = output_dir / f"{self.dataset}.txt"
-        with open(output_path, "w") as f:
-            f.write(output_text)
+        output_path.write_text(output_text, encoding="utf-8")
 
 
 class PosteriorDistribution(RegressionBase):
