@@ -1070,6 +1070,11 @@ class PosteriorDistribution(RegressionBase):
         show_legend : bool, optional
             Whether to display legend
         """
+        if a0 <= 0:
+            raise ValueError(f"a0 must be positive, got {a0}")
+        if b0 <= 0:
+            raise ValueError(f"b0 must be positive, got {b0}")
+
         # Specify prior mean and covariance matrix
         Sigma0 = utils.construct_covariance_matrix(*std_devs, rho)
 

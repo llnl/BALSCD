@@ -90,6 +90,11 @@ def parse_arguments() -> argparse.Namespace:
 
     args = parser.parse_args()
 
+    if args.a0 is not None and args.a0 <= 0:
+        parser.error(f"--a0 must be positive, got {args.a0}")
+    if args.b0 is not None and args.b0 <= 0:
+        parser.error(f"--b0 must be positive, got {args.b0}")
+
     return args
 
 
