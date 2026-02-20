@@ -125,7 +125,7 @@ def plot_all(
     # Raw Us, Up data with least squares fit
     posterior.plot_least_squares_fit()
 
-    # Surface plot of marginal posterior distribution of beta
+    # Filled contour plot of the joint posterior distribution of beta
     posterior.plot_posterior_beta_noninformative()
 
     # Credible interval for Hugoniot in pressure-volume plane

@@ -79,7 +79,7 @@ def plot_all(dataset: str) -> None:
     # Fig. 3: Posterior distribution of C0 and histogram of samples
     posterior.plot_posterior_with_samples(show_legend=show_legend)
 
-    # Fig. 4: Surface plot of marginal posterior distribution of beta
+    # Fig. 4: Filled contour plot of the joint posterior distribution of beta
     posterior.plot_posterior_beta_noninformative(show_legend=show_legend)
 
     # Fig. 5: Credible interval for Hugoniot in pressure-volume plane
