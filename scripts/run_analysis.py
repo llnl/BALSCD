@@ -46,6 +46,7 @@ def parse_arguments() -> argparse.Namespace:
         "--datasets",
         type=str,
         nargs="+",
+        required=True,
         help="Dataset name(s) without .csv extension (e.g., argon_marsh copper_marsh)",
     )
 
