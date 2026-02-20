@@ -449,6 +449,8 @@ class RegressionBase(ABC):
             Whether to display legend
         alpha : float, optional
             Significance level
+        mean_label : str, optional
+            Label for the mean prediction line
         """
         ax = utils.setup_figure()
 
