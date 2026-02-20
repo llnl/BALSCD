@@ -775,7 +775,7 @@ class PosteriorDistribution(RegressionBase):
             C0_mc,
             color="black",
             histtype="step",
-            bins=bins.tolist(),
+            bins=bins,
             linewidth=2,
             density=True,
             zorder=1,
