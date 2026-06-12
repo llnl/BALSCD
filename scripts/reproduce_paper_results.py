@@ -27,24 +27,24 @@ residuals_plot_limits = {
 informative_prior_configs = {
     "argon_marsh": {
         "beta0": (1.32, 1.5),
-        "std_devs": (0.1, 0.2),
+        "std_devs": (0.2, 0.3),
         "rho": 0,
         "a0": 5,
-        "b0": 5,
+        "b0": 0.5,
     },
     "copper_marsh": {
         "beta0": (3.8, 1.62),
-        "std_devs": (0.075, 0.05),
+        "std_devs": (0.2, 0.2),
         "rho": -0.2,
         "a0": 5,
-        "b0": 5,
+        "b0": 0.5,
     },
     "nickel_marsh": {
         "beta0": (4.7, 1.55),
-        "std_devs": (0.08, 0.08),
+        "std_devs": (0.8, 0.8),
         "rho": -0.8,
         "a0": 5,
-        "b0": 5,
+        "b0": 0.5,
     },
 }
 
