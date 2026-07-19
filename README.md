@@ -1,6 +1,6 @@
 # Overview
 
-This repository contains the code and data for creating the plots and tables in "A Tutorial on Bayesian Analysis of Linear Shock Compression Data" (citation to be added).
+This repository contains the code and data for creating the plots and tables in "A Tutorial on Bayesian Analysis of Linear Shock Compression Data," published in the *Journal of Applied Physics*.
 
 Features:
 
@@ -61,6 +61,26 @@ Plots are saved to `images/` and tables to `summary_statistics/` (both created a
 The `run_analysis.py` script in the `scripts` directory performs the Bayesian and bootstrap analysis discussed in the paper on a new dataset.
 The code requires new datasets to have the same format as the datasets in Marsh (1980).
 See the script documentation for details and example usage.
+
+## Citation
+
+If you use this code or data in your research, please cite:
+
+Bernstein, J., Myint, P. C., Lindquist, B. A., & Brown, J. L. (2026). A Tutorial on Bayesian analysis of linear shock compression data. *Journal of Applied Physics*, *140*(3), 031101. https://doi.org/10.1063/5.0334353
+
+BibTeX:
+```bibtex
+@article{bernstein2026tutorial,
+  title={A Tutorial on Bayesian analysis of linear shock compression data},
+  author={Bernstein, Jason and Myint, Philip C. and Lindquist, Beth A. and Brown, Justin Lee},
+  journal={Journal of Applied Physics},
+  volume={140},
+  number={3},
+  pages={031101},
+  year={2026},
+  doi={10.1063/5.0334353}
+}
+```
 
 ## Issues and Questions
 
